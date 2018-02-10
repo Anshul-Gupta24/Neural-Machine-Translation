@@ -12,7 +12,7 @@ import zero_pad as zp
 #process data
 
 indata = open('train.txt', 'r').read()
-outdata = open('train_rev2.txt', 'r').read()
+outdata = open('target.txt', 'r').read()
 inlines = indata.splitlines()
 outlines = outdata.splitlines()
 words_in = indata.split()
@@ -240,13 +240,21 @@ with tf.Session() as sess:
 
     	# get translation of sample sentence every epoch
 
-    	# get random first char; testing on first sentence... can change
+	# change as required     	
+	sentence = "shall we go for a walk ?"
+	
+	inp_sample = sentence.split()
+	inp_int_sample = [word_ind_in[w] for w in inp_sample]
+	inp_int_sample = [inp_int_sample]
+	final_inp_sample = zp.zero_pad(inp_int_sample, max_inp_len)
+	seq_len_inp = [len(inp_sample)] * batch_size
+	
 
 	_ip = np.zeros((batch_size, max_inp_len), dtype=int)
 	c=0
-	seq_len_inp = [sequence_lengths_inp[0]] * batch_size
+	seq_len_inp = [len(inp_sample)] * batch_size
 	for i in xrange(batch_size):
-			_ip[c] = np.copy(x[0])
+			_ip[c] = np.copy(final_inp_sample[0])
 			c+=1
 
 	#print(_ip.shape)

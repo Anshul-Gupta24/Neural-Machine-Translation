@@ -23,7 +23,7 @@
 #### >> python addtokens.py
 #### >> python nmt.py
 
-####
+#### \n
 #### Note:
 
 #### addtokens.py adds a start token at the start of every target sentence.

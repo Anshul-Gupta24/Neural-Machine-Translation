@@ -12,7 +12,7 @@ import zero_pad as zp
 #process data
 
 indata = open('train.txt', 'r').read()
-outdata = open('target.txt', 'r').read()
+outdata = open('target2.txt', 'r').read()
 inlines = indata.splitlines()
 outlines = outdata.splitlines()
 words_in = indata.split()

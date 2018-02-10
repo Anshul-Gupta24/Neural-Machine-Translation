@@ -4,10 +4,11 @@
 import numpy as np
 
 
-def zero_pad(inp):
+def zero_pad(inp, max_sequence_length = None):
         
 	sequence_lengths = [len(seq) for seq in inp]
-        max_sequence_length = max(sequence_lengths)
+        if max_sequence_length is None:
+		max_sequence_length = max(sequence_lengths)
         
 	inputs_batch_major = np.zeros(shape=[len(inp), max_sequence_length], dtype=np.int32) # == PAD
         

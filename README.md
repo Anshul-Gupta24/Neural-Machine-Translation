@@ -19,9 +19,9 @@
 #### To run:
 
 #### (Source language in 'train.txt', Target language in 'target.txt')
-```
-#### >> python addtokens.py
-#### >> python nmt.py
+#### ```
+>> python addtokens.py
+>> python nmt.py
 ```
 ####  </br> 
 

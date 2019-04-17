@@ -15,7 +15,7 @@
 #### During the test phase, we feed in the generated output rather than the target word back into the Decoder. </br> </br>
 
 ### Requirements
-* Python 2
+* Python 2.7
 * Tensorflow
 * Numpy
 #### </br>
